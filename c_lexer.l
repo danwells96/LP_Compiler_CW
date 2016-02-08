@@ -6,7 +6,8 @@
 KEYWORD
 IDENTIFIER
 OPERATOR
-CONSTANT
+CONSTANT	0[xX][0-9a-fA-F]+[uU]?[lL]?[lL]?|0[1-7]*[uU]?[lL]?[lL]?|[1-9][0-9]*[uU]?[lL]?[lL]?|[+-]?[1-9][0-9]*[lL]?[lL]?
+		/*hex int|octal int|unsigned decimal int|signed decimal int*/
 STRINGLITERAL
 INVALID
 
