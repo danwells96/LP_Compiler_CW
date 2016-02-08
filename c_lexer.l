@@ -14,6 +14,7 @@ INVALID
 
 %%
 
+{CONSTANT}	printf("%s	CONSTANT	TOKEN TYPE	LINENUM	SOURCEFILE	SOURCELINE", yytext);
 //here printf the required output... yytext = current token
 
 %%
