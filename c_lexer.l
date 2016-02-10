@@ -9,16 +9,17 @@ OPERATOR	[<][<][=]?|[>][>][=]?|[+][+]|[-][-]|[|][|]?|[&][&]?|[-%<>+*/=!&^|][=]?|
 CONSTANT	[0][xX][0-9a-fA-F]+[uU]?[lL]?[lL]?|[0][1-7]*[uU]?[lL]?[lL]?|[1-9][0-9]*[uU]?[lL]?[lL]?|[+-]?[1-9][0-9]*[lL]?[lL]?
 			/*hex int|octal int|unsigned decimal int|signed decimal int*/
 STRINGLITERAL	["]([a-zA-Z0-9.,_£$!^&*()/@~:;+=<>?'#{}-]*[ ]*[	]*[a-zA-Z0-9.,_£$!^&*()/@~:;+=<>?'#{}-]*)*["]
-/*INVALID
-*/
+INVALID		[^KEYWORD]|[^IDENTIFIER]|[^OPERATOR]|[^CONSTANT]|[^STRINGLITERAL]
+
 
 %%
 
 {KEYWORD}		printf("%s	KEYWORD			TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
-{IDENTIFIER}	printf("%s	IDENTIFIER		TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
+{IDENTIFIER}		printf("%s	IDENTIFIER		TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
 {OPERATOR}		printf("%s	OPERATOR		TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
 {CONSTANT}		printf("%s	CONSTANT		TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
-{STRINGLITERAL}	printf("%s	STRINGLITERAL	TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
+{STRINGLITERAL}		printf("%s	STRINGLITERAL		TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
+{INVALID}		printf("%s	INVALID			TOKENTYPE	LINENUM	SOURCEFILE	SOURCELINE\n", yytext);
 
 %%
 
