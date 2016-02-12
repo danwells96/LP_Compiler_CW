@@ -13,16 +13,16 @@ CHAR			char
 CONST			const
 CONTINUE		continue
 DEFAULT			default
-DO				do
+DO			do
 DOUBLE			double
 ELSE			else
 ENUM			enum
 EXTERN			extern
 FLOAT			float
-FOR				for
+FOR			for
 GOTO			goto
-IF				if
-INT				int
+IF			if
+INT			int
 LONG			long
 REGISTER		register
 RETURN			return
@@ -43,21 +43,21 @@ IDENTIFIER		[a-zA-Z][a-zA-Z0-9_]*
 
 
 
-CLOSEBRACKET	[)]
+CLOSEBRACKET		[)]
 OPENBRACKET		[(]
 SEMICOLON		[;]
-OPENCURLYBRACE	[{]
-CLOSECURLYBRACE	[}]
+OPENCURLYBRACE		[{]
+CLOSECURLYBRACE		[}]
 INCREMENT		[+][+]
 DECREMENT		[-][-]
-ADD				[+]
-SUB				[-]
+ADD			[+]
+SUB			[-]
 MULTIPLY		[*]
 DIVIDE			[/]
 ASSIGN			[=]
 EQUAL			[=][=]
 UNEQUAL			[!][=]
-FUNCTIONCALL	[(][)]
+FUNCTIONCALL		[(][)]
 ARRAYINDEX		[[]]
 LOGICALNOT		[!]
 BITWISENOT		[~]
@@ -66,7 +66,7 @@ BITWISESHIFTLEFT	[<][<]
 BITWISESHIFTRIGHT	[>][>]
 LESSTHAN		[<]
 GREATERTHAN		[>]
-LESSTHANEQUAL	[<][=]
+LESSTHANEQUAL		[<][=]
 GREATERTHANEQUAL	[>][=]
 BITWISEAND		[&]
 BITWISEOR		[|]
@@ -77,16 +77,16 @@ ASSIGNSUM		[+][=]
 ASSIGNSUB		[-][=]
 ASSIGNMULT		[*][=]
 ASSIGNDIV		[/][=]
-ASSIGNMODULO	[%][=]
+ASSIGNMODULO		[%][=]
 ASSIGNBITLEFTSHIFT	[<][<][=]
 ASSIGNBITRIGHTSHIFT	[>][>][=]
 ASSIGNBITWISEAND	[&][=]
 ASSIGNBITWISEOR		[|][=]
 ASSIGNBITWISEXOR	(^)[=]
-COMMA				\,
+COMMA			\,
 TERNARYCONDITIONAL	[?][:]
 ELLIPSIS		[\.][\.][\.]
-MEMBERFUNCTION	[\.]|[-][>]
+MEMBERFUNCTION		[\.]|[-][>]
 
 
 
@@ -97,8 +97,8 @@ UNSIGNEDINT		[1-9][0-9]*[uU]?[lL]?[lL]?
 SIGNEDINT		[-]?[1-9][0-9]*[lL]?[lL]?
 OCTALINT		[0][1-7]*[uU]?[lL]?[lL]?
 FLOATCONST		([0-9]*([.][0-9]*)?)+[eE]?[-]?[0-9]*[fFlL]?
-STRINGLITERAL	["][-a-zA-Z0-9.,_£$!^&*()/@~:;+=<>?'#{} \t\n]*["$]
-WS				[ ]|[\t]
+STRINGLITERAL		["][-a-zA-Z0-9.,_£$!^&*()/@~:;+=<>?'#{} \t\n]*["$]
+WS			[ ]|[\t]
 NEWLINE			[\n]
 
 %%
