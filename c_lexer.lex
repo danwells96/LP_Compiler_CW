@@ -96,8 +96,8 @@ HEXINT			[0][xX][0-9a-fA-F]+[uU]?[lL]?[lL]?
 UNSIGNEDINT		[1-9][0-9]*[uU]?[lL]?[lL]?
 SIGNEDINT		[-]?[1-9][0-9]*[lL]?[lL]?
 OCTALINT		[0][1-7]*[uU]?[lL]?[lL]?
-FLOATCONST		([0-9]*([.][0-9]*)?)+[eE]?[-]?[0-9]*[fFlL]?
-STRINGLITERAL		["][-a-zA-Z0-9.,_£$!^&*()/@~:;+=<>?'#{} \t\n]*["$]
+FLOATCONST		([0-9]*([.][0-9]*)*)[eE]?[-]?[0-9]*[fFlL]?
+STRINGLITERAL		["]([-a-zA-Z0-9.,_£$!^&*()/@~:;+=<>?'#{} ]'\t''\n')*["$]
 WS			[ ]|[\t]
 NEWLINE			[\n]
 
