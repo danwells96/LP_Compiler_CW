@@ -1,6 +1,9 @@
-c_lexer.c : c_lexer.l
-	 lex -o c_lexer.c c_lexer.l
-	
-lexer : c_lexer.c
-	gcc c_lexer.c -o lexer
-	
+bin/c_lexer : src/c_lexer.yy.c
+	g++ src/c_lexer.yy.c -o bin/c_lexer
+
+src/c_lexer.yy.c : src/c_lexer.lex
+	flex -o src/c_lexer.yy.c src/c_lexer.lex
+
+clean :
+	rm src/c_lexer.yy.c
+	rm bin/c_lexer
