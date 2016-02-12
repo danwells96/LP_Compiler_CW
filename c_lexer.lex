@@ -87,7 +87,7 @@ COMMA			\,
 TERNARYCONDITIONAL	[?][:]
 ELLIPSIS		[\.][\.][\.]
 MEMBERFUNCTION		[\.]|[-][>]
-
+COLON			[:]
 
 
 
@@ -97,6 +97,7 @@ UNSIGNEDINT		[1-9][0-9]*[uU]?[lL]?[lL]?
 SIGNEDINT		[-]?[1-9][0-9]*[lL]?[lL]?
 OCTALINT		[0][1-7]*[uU]?[lL]?[lL]?
 FLOATCONST		[+-]?[0-9]*[.]?[0-9]+([eE][+-]?[0-9]+)?[fFlL]?|[+-]?[0-9]+[eE][+-]?[0-9]+[fFlL]?
+CHARCONST		['][-a-zA-Z0-9\.,_£$!^&*()/@~:;+=<>?'#{} \t]['$]
 STRINGLITERAL		["][-a-zA-Z0-9\.,_£$!^&*()/@~:;+=<>?'#{} \t\n]*["$]
 WS			[ ]|[\t]
 NEWLINE			[\n]
@@ -188,7 +189,7 @@ NEWLINE			[\n]
 {TERNARYCONDITIONAL}	printf("%s		OPERATOR		TTernaryConditional		%i\n", yytext, line_number);
 {ELLIPSIS}		printf("%s		OPERATOR		TEllipsis		%i\n", yytext, line_number);
 {MEMBERFUNCTION}	printf("%s		OPERATOR		TMemberFunction		%i\n", yytext, line_number);
-
+{COLON}			printf("%s		OPERATOR		TColon			%i\n", yytext, line_number);
 
 
 
@@ -197,6 +198,7 @@ NEWLINE			[\n]
 {SIGNEDINT}		printf("%s		CONSTANT		TSignedInt		%i\n", yytext, line_number);
 {OCTALINT}		printf("%s		CONSTANT		TOctal			%i\n", yytext, line_number);
 {FLOATCONST}	printf("%s		CONSTANT		TFloat			%i\n", yytext, line_number);
+{CHARCONST}	printf("%s		CONSTANT		TCharConst		%i\n", yytext, line_number);
 {STRINGLITERAL}	printf("%s		STRINGLITERAL	TString			%i\n", yytext, line_number);
 {WS}			;
 {NEWLINE}		line_number++;
